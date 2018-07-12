@@ -1,0 +1,21 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+#drawArea {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    background-color: #AAEEDD;
+    width: 100%;
+    white-space: nowrap;
+    -webkit-text-stroke: 1.3px #222;
+    bottom: 0px;
+}
+
+span.generator {
+    padding-left: 5px;
+    white-space: nowrap;
+}
