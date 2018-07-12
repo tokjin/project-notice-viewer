@@ -26,8 +26,8 @@ OBSのBrowserSourceでローカルファイルを開くとクロスドメイン�
 プロジェクトのAPIを叩けないため。xsplitだと普通に通信できる。 
 
 ### 問い合わせ
-Twitter(https://twitter.com/jintokai)までお願いします。
+[Twitter](https://twitter.com/jintokai)までお願いします。
 
 ### その他
-audioファイルは、効果音ラボ(https://soundeffect-lab.info/)より使用させて頂きました。
-解説ブログ https://tokaisodachi.com/archives/1795
+audioファイルは、[効果音ラボ](https://soundeffect-lab.info/)より使用させて頂きました。
+[解説ブログ](https://tokaisodachi.com/archives/1795)
