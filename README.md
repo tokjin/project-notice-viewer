@@ -1,7 +1,7 @@
 # FRESH LIVEプロジェクト速報ビュワー v1.0
 
 ### これは何か
-FRESH LIVEで自分のプロジェクトに誰かが支援してくれた時に、放送画面に速報を出すことができる
+FRESH LIVEで自分のプロジェクトに誰かが支援してくれた時に、放送画面に速報を出すことができる。
 
 ### 設定方法
 * js/main.jsをひらく。1行目のprojectCodeを自分のプロジェクトのものに変更する。  
@@ -28,6 +28,10 @@ OBSのショートカットを右クリック。「リンク先」のところ�
 ### なぜ--disable-web-securityが必要か
 OBSのBrowserSourceでローカルファイルを開くとクロスドメイン通信ができない(CORS)ので、  
 プロジェクトのAPIを叩けないため。xsplitだと普通に通信できる。 
+
+### Macでは使えないのか
+Mac版のOBSでは、--disable-web-securityの起動オプションが使えないみたいなので対応していません。  
+無理やり使うなら、ローカルサーバーで[PHPのPROXY](https://gist.github.com/dropmeaword/a050231a5767adc52b986faf587f64c9)を作ってそれを経由すればCORSを回避できるので動くと思います。
 
 ### 問い合わせ
 [Twitter](https://twitter.com/jintokai)までお願いします。
