@@ -1,6 +1,5 @@
-let projectCode = '6TLMq';  // https://freshlive.tv/projects/***** ←ここの部分を入れる
-let viewTime = 8000;        // 画面に表示している時間(1000=1秒)
-
+const projectCode = '6TLMq';  // https://freshlive.tv/projects/***** ←ここの部分を入れる
+const viewTime = 8000;        // 画面に表示している時間(1000=1秒)
 
 let getProjectId = () => {
 	$.ajax({
@@ -21,7 +20,7 @@ let getProjectId = () => {
 
 let loopStart = () => {
 	drawScreen('', '「' + projectTitle + '」巡回を開始しました。', 'log', 1);
-	var projectCheckLoop = setInterval("checkProject()", 3000);
+	let projectCheckLoop = setInterval("checkProject()", 3000);
 }
 
 let checkProject = () => {
@@ -36,8 +35,8 @@ let checkProject = () => {
 		success: function (json) {
 			let newUserTime = new Date(json.data[0].cheeredAt);
 			if (latestUserTime < newUserTime) {
-				for (var i = 0; i < 5; i++) {
-					var message = json.data[i].user.displayName + 'さんが、' + json.data[i].point + 'ptの支援をしてくれました！';
+				for (let i = 0; i < 5; i++) {
+					let message = json.data[i].user.displayName + 'さんが、' + json.data[i].point + 'ptの支援をしてくれました！';
 					drawScreen('', message, 'project', 1);
 					let checkTime = new Date(json.data[i + 1].cheeredAt);
 					if (latestUserTime >= checkTime) break;
@@ -53,7 +52,7 @@ let drawScreen = (name, text, type, owner) => {
 		let p = $("#projectSE")[0].play();
 		p.catch(function (e) {});
 	}
-	var id = idGenerator();
+	let id = idGenerator();
 	html += '<span id="' + id + '" class="generator" style="display:none">' + text + '</span>';
 	$('#drawArea').html(html);
 	$('span#' + id).css('background-color', '#' + id);
@@ -66,8 +65,8 @@ let deleteScreen = (id) => {
 }
 
 let idGenerator = () => {
-	var randomColor = "";
-	for (var i = 0; i < 6; i++) {
+	let randomColor = "";
+	for (let i = 0; i < 6; i++) {
 		randomColor += (8 * Math.random() | 0).toString(16); // 濃いめの背景にしたいので16->8に変更
 	}
 	return randomColor;
@@ -77,6 +76,6 @@ let latestUserTime = new Date();
 let html = '';
 let projectTitle = '';
 let projectId = 0;
-let apiUrl = 'https://freshlive.tv/proxy/Projects;';
+const apiUrl = 'https://freshlive.tv/proxy/Projects;';
 
 getProjectId();
